@@ -189,9 +189,12 @@ final class FlapView: UIView, CAAnimationDelegate {
       return
     }
 
-    if let token = tokenGenerator.next() {
-      updateWithToken(token, animated: true)
-    }
+    tokenGenerator.currentElement = targetToken
+    updateWithToken(targetToken, animated: true)
+
+//    if let token = tokenGenerator.next() {
+//      updateWithToken(token, animated: true)
+//    }
   }
 
   /// Display the given token. If animated it rotate the flaps.
